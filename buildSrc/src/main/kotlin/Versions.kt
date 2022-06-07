@@ -1,0 +1,18 @@
+object Versions {
+    const val gradlePlugin = "4.2.1"
+    const val kotlin = "1.6.10"
+    const val compose = "1.1.1"
+    const val lifecycleRuntimeKtx = "2.4.1"
+    const val activityCompose = "1.4.0"
+    const val coreKtx = "1.7.0"
+    const val jUnit = "4.13.2"
+    const val jUnitExt = "1.1.3"
+    const val espressoCore = "3.4.0"
+    const val navigationCompose = "2.4.2"
+    const val retrofit = "2.9.0"
+    const val moshi = "1.13.0"
+    const val moshiConvertor = "1.13.0"
+    const val hilt = "2.41"
+    const val coroutines = "1.6.1"
+    const val paging_version = "3.1.1"
+}

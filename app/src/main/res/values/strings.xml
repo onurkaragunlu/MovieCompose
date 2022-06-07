@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Movie Compose</string>
+    <string name="bottom_movie">Movie</string>
+    <string name="bottom_favorite">Favorite</string>
+</resources>

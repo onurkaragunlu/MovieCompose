@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/base-data" />
+            <option value="$PROJECT_DIR$/base-domain" />
+            <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/core-model" />
+            <option value="$PROJECT_DIR$/core-network" />
+            <option value="$PROJECT_DIR$/core-network-model" />
+            <option value="$PROJECT_DIR$/core-ui" />
+            <option value="$PROJECT_DIR$/data-movie" />
+            <option value="$PROJECT_DIR$/domain-movie" />
+            <option value="$PROJECT_DIR$/feature-dashboard-api" />
+            <option value="$PROJECT_DIR$/feature-dashboard-impl" />
+            <option value="$PROJECT_DIR$/feature-favoriteList-api" />
+            <option value="$PROJECT_DIR$/feature-favoriteList-impl" />
+            <option value="$PROJECT_DIR$/feature-movie-api" />
+            <option value="$PROJECT_DIR$/feature-movie-impl" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
