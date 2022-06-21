@@ -26,6 +26,8 @@ object Deps {
     const val coroutinesAndroid =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
     const val pagingLibraryCommon = "androidx.paging:paging-common:${Versions.paging_version}"
+    const val javaxInject = "javax.inject:javax.inject:${Versions.javaxInject}"
+    const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.loggingInterceptor}"
 
 
     val composeLibraries = arrayListOf<String>().apply {

@@ -2,27 +2,25 @@ package com.onurkaragunlu.core_network.retrofit
 
 import com.squareup.moshi.Moshi
 import okhttp3.Request
-import okhttp3.ResponseBody
 import okio.Timeout
 import retrofit2.Call
 import retrofit2.Callback
-import retrofit2.Converter
 import retrofit2.Response
 import java.io.IOException
 import java.net.SocketTimeoutException
 import com.onurkaragunlu.core_network_model.NetworkResponse
 import com.squareup.moshi.JsonClass
 import com.onurkaragunlu.core_network_model.Error
+
 /**
  * Created by Onur Karagünlü on 4.06.2022.
  */
 class NetworkResponseCall<T : Any>(
     private val delegate: Call<T>,
-    private val errorConverter: Converter<ResponseBody, Error>,
     private val moshi: Moshi
 ) : Call<NetworkResponse<T>> {
     override fun clone(): Call<NetworkResponse<T>> =
-        NetworkResponseCall(delegate.clone(), errorConverter, moshi)
+        NetworkResponseCall(delegate.clone(), moshi)
 
     override fun execute(): Response<NetworkResponse<T>> {
         throw  UnsupportedOperationException("NetworkResponseCall doesn't support execute")
@@ -49,7 +47,8 @@ class NetworkResponseCall<T : Any>(
                     val errorBody = response.errorBody()
                     if (errorBody != null) {
                         val apiError =
-                            moshi.adapter<ApiError>(ApiError::class.java).fromJson(errorBody.charStream().readText())
+                            moshi.adapter<ApiError>(ApiError::class.java)
+                                .fromJson(errorBody.charStream().readText())
                         if (apiError?.status_message != null) {
                             callback.onResponse(
                                 this@NetworkResponseCall,

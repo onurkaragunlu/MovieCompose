@@ -1,10 +1,12 @@
 package com.onurkaragunlu.data_movie.model
 
 import com.onurkaragunlu.base_data.extension.mapper.ResponseModel
+import com.squareup.moshi.JsonClass
 
 /**
  * Created by Onur Karagünlü on 4.06.2022.
  */
+@JsonClass(generateAdapter = true)
 data class MovieDTO(
     val backdrop_path: String?,
     val first_air_date: String?,

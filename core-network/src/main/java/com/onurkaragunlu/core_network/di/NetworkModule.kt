@@ -1,15 +1,15 @@
 package com.onurkaragunlu.core_network.di
 
-import android.content.Context
+import com.onurkaragunlu.core_network.BuildConfig
 import com.onurkaragunlu.core_network.retrofit.ApiKeyInterceptor
 import com.onurkaragunlu.core_network.retrofit.NetworkResponseAdapterFactory
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
@@ -35,12 +35,16 @@ object NetworkModule {
             .readTimeout(15, TimeUnit.SECONDS)
             .connectTimeout(15, TimeUnit.SECONDS)
             .addInterceptor(ApiKeyInterceptor())
+            .addInterceptor(HttpLoggingInterceptor().apply {
+                setLevel(HttpLoggingInterceptor.Level.BODY)
+            })
             .build()
     }
 
     @Singleton
     @Provides
-    fun provideMoshiConverter(): MoshiConverterFactory = MoshiConverterFactory.create()
+    fun provideMoshiConverter(moshi: Moshi): MoshiConverterFactory =
+        MoshiConverterFactory.create(moshi)
 
     @Singleton
     @Provides
@@ -49,9 +53,10 @@ object NetworkModule {
         moshiConverterFactory: MoshiConverterFactory,
         moshi: Moshi
     ): Retrofit {
-        return Retrofit.Builder().baseUrl("https://api.themoviedb.org/3/")
+        return Retrofit.Builder().baseUrl(BuildConfig.API_URL)
             .client(okHttpClient)
             .addConverterFactory(moshiConverterFactory)
+            // .addConverterFactory( GsonConverterFactory.create())
             .addCallAdapterFactory(NetworkResponseAdapterFactory(moshi))
             .build()
     }

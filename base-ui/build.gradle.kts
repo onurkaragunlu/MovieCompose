@@ -9,7 +9,6 @@ android {
     defaultConfig {
         minSdk = ConfigData.minSdkVersion
         targetSdk = ConfigData.targetSdkVersion
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -32,9 +31,6 @@ android {
     }
 }
 
-
 dependencies {
-    implementation(project(":core-model"))
-    implementation(project(":core-network-model"))
     implementation(project(":base-domain"))
 }

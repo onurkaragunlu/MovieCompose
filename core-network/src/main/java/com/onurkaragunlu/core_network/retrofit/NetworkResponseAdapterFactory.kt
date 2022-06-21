@@ -34,10 +34,7 @@ class NetworkResponseAdapterFactory(private val moshi: Moshi) : CallAdapter.Fact
 
         val successBodyType = getParameterUpperBound(0, responseType)
 
-        val errorBodyConverter =
-            retrofit.nextResponseBodyConverter<Error>(null, Error::class.java, annotations)
-
-        return NetworkResponseAdapter<Any>(successBodyType, errorBodyConverter, moshi)
+        return NetworkResponseAdapter<Any>(successBodyType, moshi)
 
     }
 }

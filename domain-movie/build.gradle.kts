@@ -1,8 +1,6 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    kotlin("kapt")
-    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -39,6 +37,5 @@ dependencies {
     implementation(project(":core-model"))
     implementation(project(":base-domain"))
     implementation(Deps.pagingLibraryCommon)
-    implementation(Deps.hilt)
-    kapt(Deps.hiltKapt)
+    implementation(Deps.javaxInject)
 }

@@ -45,7 +45,12 @@ dependencies {
     Deps.composeLibraries.forEach(::implementation)
     implementation(project(":feature-movie-api"))
     implementation(project(":domain-movie"))
+    implementation(project(":base-ui"))
+    implementation(project(":base-domain"))
+    implementation(project(":core-model"))
     implementation(Deps.hilt)
     kapt(Deps.hiltKapt)
-   implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation(Deps.pagingLibraryCommon)
+    implementation( "androidx.paging:paging-compose:1.0.0-alpha15")
 }

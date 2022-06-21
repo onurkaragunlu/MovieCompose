@@ -17,7 +17,7 @@ class MoviePagingUseCase @Inject constructor(
     @IoDispatcher private val dispatcher: CoroutineDispatcher
 ) : FlowUseCase<Unit, PagingData<Movie>>(dispatcher) {
 
-    override suspend fun getExecutable(params: Unit): Flow<PagingData<Movie>> {
+    override  fun getExecutable(params: Unit): Flow<PagingData<Movie>> {
         return movieRepository.getMovieListFlow()
     }
 }

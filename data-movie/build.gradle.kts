@@ -33,13 +33,13 @@ android {
         jvmTarget = "1.8"
     }
 }
-
 dependencies {
     implementation(Deps.coreKtx)
     implementation(project(":domain-movie"))
     implementation(project(":core-model"))
     implementation(project(":core-network-model"))
     implementation(project(":base-data"))
+    //TODO check here why it use base domain
     implementation(project(":base-domain"))
     implementation(Deps.hilt)
     kapt(Deps.hiltKapt)

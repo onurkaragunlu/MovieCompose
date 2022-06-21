@@ -15,4 +15,6 @@ object Versions {
     const val hilt = "2.41"
     const val coroutines = "1.6.1"
     const val paging_version = "3.1.1"
+    const val javaxInject = "1"
+    const val loggingInterceptor = "4.9.3"
 }

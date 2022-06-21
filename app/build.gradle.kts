@@ -47,11 +47,8 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+}
 
-}
-hilt {
-    enableAggregatingTask = true
-}
 dependencies {
     implementation(project(":core-ui"))
     implementation(project(":feature-movie-impl"))
@@ -72,7 +69,6 @@ dependencies {
     debugImplementation(Deps.uiTooling)
     implementation(Deps.hilt)
     kapt(Deps.hiltKapt)
-    /*implementation(project(":data-movie"))
-    implementation(project(":domain-movie"))
-    implementation(project(":core-network"))*/
+    implementation(project(":data-movie"))
+    implementation(project(":core-network"))
 }

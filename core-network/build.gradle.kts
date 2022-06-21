@@ -25,7 +25,10 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-          //  buildConfigField("String","API_URL","https://api.themoviedb.org/3/")
+            buildConfigField("String","API_URL","\"https://api.themoviedb.org/3/\"")
+        }
+        debug {
+            buildConfigField("String","API_URL","\"https://api.themoviedb.org/3/\"")
         }
     }
     compileOptions {
@@ -47,4 +50,6 @@ dependencies {
     implementation(Deps.coroutinesCore)
     implementation(project(":core-network-model"))
     implementation(project(":core-model"))
+    implementation(Deps.loggingInterceptor)
+
 }
